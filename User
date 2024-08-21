@@ -1,0 +1,70 @@
+package org.example;
+
+import java.awt.*;
+
+public class User {
+    private String username;
+    private double monthlyBudget;
+    private List depenseList;
+
+    public User(String username, double monthlyBudget, List depenseList) {
+        this.username = username;
+        this.monthlyBudget = monthlyBudget;
+        this.depenseList = depenseList;
+    }
+
+
+    public double getTotalExpenses() {
+        double totalMontant = 0.0;
+        for (Depense expense : depenseList) {
+            totalMontant += Depense.getAmount();
+        }
+        return totalMontant;
+    }
+
+    public boolean isWithinBudget() {
+        return getTotalExpenses() <= monthlyBudget;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public double getMonthlyBudget() {
+        return monthlyBudget;
+    }
+
+    public void setMonthlyBudget(double monthlyBudget) {
+        this.monthlyBudget = monthlyBudget;
+    }
+
+    public List getDepenseList() {
+        return depenseList;
+    }
+
+    public void setDepenseList(List depenseList) {
+        this.depenseList = depenseList;
+    }
+
+    public double getTotalSpentThisMonth() {
+        double total = 0.0;
+        for (Depense expense : depenseList) {
+            total += expense.getAmount();
+        }
+        return total;
+    }
+
+    public double getRemainingBudget() {
+        return monthlyBudget - getTotalSpentThisMonth();
+    }
+
+    public boolean isBudgetExceeded() {
+        return getTotalSpentThisMonth() > monthlyBudget;
+    }
+}
+
+
