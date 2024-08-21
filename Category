@@ -1,0 +1,10 @@
+package org.example;
+
+    enum Category {
+        NOURRITURE_ET_RESTAURATION,
+        TRANSPORT,
+        DIVERTISSEMENT,
+        SERVICES_PUBLIQUES,
+        AUTRES,
+    }
+
