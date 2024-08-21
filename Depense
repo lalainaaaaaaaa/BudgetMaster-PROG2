@@ -1,0 +1,44 @@
+package org.example;
+
+import java.sql.Date;
+
+public class Depense {
+    private String description;
+    private double amount;
+    private String category;
+    private Date date;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Depenses" + "description='" + description + '\'' + ", amount=" + amount + ", category='" + category + '\'' + ", date=" + date + '}';
+    }
+
+}
